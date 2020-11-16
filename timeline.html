@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>時間軸</title>
+    <style>
+        *{
+            margin: 0;
+           padding: 0;
+           list-style: none;
+        }
+        body{
+           
+            background-color: #edece1;
+        }
+        .wrap{
+            width:100%; 
+            max-width:1020px;
+           margin: auto;
+            text-align: center;
+        }
+       .wrap h1{
+        margin: 30px ;
+        font-size: 40px;
+       }
+       .wrap p{
+           line-height: 1.6;
+         margin-bottom: 30px;
+         font-size: 18px;
+        
+       }
+
+        .timeline{
+            
+            padding: 100px 10 100px;
+             }
+
+             .timeline li{
+                line-height: 1.5;
+                width: 50%;
+                box-sizing:border-box;
+                 padding: 30px  30px 60px;
+                position: relative;
+             }
+             .timeline li:nth-child(odd){
+                 float: left;
+                 padding-right: 100px;
+             }
+             .timeline li:nth-child(even){
+                float:right;
+                padding-left: 100px;
+                transform: translateY(50%);
+             }
+             
+             .timeline li:nth-child(odd)::after{
+                 right: 0;
+                 content: '';
+                 position: absolute;
+                 top: 0;
+                 width: 1px;
+                 height: 130%;
+                 background-color: #ccc;
+                 z-index: -1;
+                 
+             }      
+             .timeline li:last-child::after{
+                height: 50%; 
+             }     
+             .timeline li::before{
+                 content: '';
+                 position: absolute;
+                 top: 0;
+                 bottom: 0;
+                 margin: auto;
+                 width: 20px;
+                 height: 20px;
+                 border-radius: 10px;
+                 background-color: #aaa;
+                 z-index:2 ;
+             }
+             .timeline li:nth-child(odd):before{
+                 right: -10px;
+             }
+                .timeline li:nth-child(even):before{
+                    left: -10px;
+                }
+             .timeline a{
+                 display: block;
+                 text-decoration: none;
+                 background-color: #fff;
+                 border: 1px solid #aaa;
+                 box-sizing: border-box;
+                 padding: 15px;
+                 border-radius: 10px;
+                 box-shadow: 3px 3px 5px #888;
+                         }
+                         .timeline a:hover{
+                             background-color: #6fa5f6;
+                         }
+                         .timeline a:hover h2,
+                         .timeline a:hover p{
+                             color: #fff;
+                         }
+             .timeline h2{
+                 color: #333;
+             }
+             .timeline small{
+                 display: block;
+             }
+             .timeline p{
+                text-align: left; 
+                 color: #666;
+                 font-size: 18px;
+             }
+.timeline h2::after{
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100px;
+    background-color: #aaa;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.timeline li:nth-child(odd) h2::after{
+    right: 0;
+}
+.timeline li:nth-child(even) h2::after{
+    left: 0;
+}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>學習網頁經歷</h1>
+        <p>大家好~我是kiwi，這裡要跟大家分享的是我學習網頁的經歷</p>
+        <ul class="timeline">
+            <li>
+                <a href="#">
+                    <h2>練習CSS切版</h2>
+                    <p> 練習不同類型的切版
+                     </p>
+                </a>
+            </li>
+            
+            <li>
+                <a href="#">
+                    <h2>簡單JavaScript學習</h2>
+                    <p> 練習簡單的JS功能  </p>    
+                </a>
+            </li>            
+        </ol>            
+            <li>
+                <a href="#">
+                    <h2>學習CSS</h2>
+                    <p>努力學習CSS基礎語法
+                       </p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>學習HTML</h2>
+                    <p> 努力學習HTML基礎語法 
+                    </p> 
+                    </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
